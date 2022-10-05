@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { AuthContextProvider } from "./context/AuthContext";
+
+import Navbar from "./compnents/Navbar";
+import Footer from "./compnents/Footer";
+import AnimatedRoutes from "./compnents/AnimatedRoutes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AuthContextProvider>
+        <Navbar />
+        <AnimatedRoutes />
+        <Footer />
+      </AuthContextProvider>
+    </>
   );
 }
 
